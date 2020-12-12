@@ -1,0 +1,26 @@
+﻿@model IEnumerable<AccountModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Accounts List</h1>
+
+    @if (Model != null)
+    {
+        @foreach (var account in Model)
+        {
+            <p>Account Number: @account.AccountNumber</p>
+            <p>Account Holder: @account.AccountHolder</p>
+            <p>Cuurent Balance: @account.CurrentBalance</p>
+            <p>Bank Name: @account.BankName</p>
+            <p>Opening Date: @account.OpeningDate</p>
+            <p>Is Active: @account.IsActive</p>
+            <hr />
+        }
+    }
+    else
+    {
+        <p>Accounts list is empty!</p>
+    }
+</div>
